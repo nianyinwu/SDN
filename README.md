@@ -1,7 +1,27 @@
-# SDN
+# Simulation of Switch and Controller in Software-Defined Networking (SDN)
  
-模擬SDN(Software-defined networking)中的switch與controller，設計Network update演算法，controller藉由此演算法計算update前後各switch的傳輸link(routing table)，並將封包依照此路徑送出。
+This project simulates the interaction between switches and a centralized controller in a Software-Defined Networking (SDN) environment. 
+The primary focus is on designing a Network Update Algorithm that dynamically computes and updates the routing paths for each switch in response to topology changes, both before and after they occur.
 
-Input : switch(node)數量、Destination數量、Link數量、初始化(配置)時間、更新時間、模擬時間、DstID、帶有權重的節點圖與資料開始傳輸的時間(data packet)、SrcID與DstID
+<!-- Input Parameters: 
+- Number of Switches (Nodes): Total number of network switches.
+- Number of Destinations: Distinct destination endpoints.
+- Number of Links: Total links between nodes (edges in the graph).
+- Initialization Time: Time required for initial topology setup and path calculation.
+- Update Time: Time when the controller re-calculates and distributes new routing tables.
+- Simulation Time: Total duration of the network simulation.
+- Destination ID (DstID): ID of the destination node.
+- Network Topology: A weighted directed/undirected graph representing links between nodes with associated costs (e.g., bandwidth, latency).
+- Data Transmission Start Time: Time at which data packets begin to be transmitted.
+- Source and Destination Pairs (SrcID, DstID): Each packet has a source and destination node.
 
-Output : 時間、接收端ID、封包ID、來源ID、目的ID、前一個傳送的ID、下一個要傳送的ID與封包種類
+Output (per event/log entry):
+- Time: The timestamp when the event occurs.
+- Receiver ID: The ID of the node receiving the packet.
+- Packet ID: Unique identifier for the packet.
+- Source ID: The originating node of the packet.
+- Destination ID: The intended destination node.
+- Previous Node ID: The node that forwarded the packet.
+- Next Node ID: The next hop as determined by the controller's routing update.
+- Packet Type: Indicates whether the packet is a data packet, control packet, or update-related. -->
+
